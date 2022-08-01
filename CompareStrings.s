@@ -1,3 +1,14 @@
+;+----+-----------------+
+;| R0 | String1 address |
+;+----+-----------------+
+;| R1 | String2 address |
+;+----+-----------------+
+;| R8 | First String    |
+;+----+-----------------+
+;| R9 | Second String   |
+;+----+-----------------+		
+		
+		
 		PRESERVE8
 		THUMB 
 		AREA RESET, DATA, READONLY
@@ -59,7 +70,8 @@ LOOP2
 	STRB R4, [R9, R2]	
 	ADD R2, #1
 	B LOOP2
-
+	LDR R8, =first
+	LDR R9, =second
 STOP
 	B STOP
 	END ; End of the program
